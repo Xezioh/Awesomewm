@@ -1,2 +1,2 @@
 # Awesomewm
-yep
+this repo contains my config for Awesomewm
