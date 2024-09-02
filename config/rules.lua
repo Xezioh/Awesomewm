@@ -17,13 +17,16 @@ awful.rules.rules = {
      }
     },
 
-    -- Floating clients.
+    -- anything added here will start in floating mode
     { rule_any = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
           "pinentry",
+          "kitty",
+          "thunar",
         },
+
         class = {
           "Arandr",
           "Blueman-manager",
@@ -57,4 +60,5 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
 }
+
 -- }}}
