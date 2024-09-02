@@ -25,14 +25,15 @@ awful.spawn.with_shell("mkdir -p " .. autostart_dir)
 
 
 -- Auto-start applications using run_once to prevent duplicates
+run_once ("picom")
 run_once ("pavucontrol")
-
 run_once ("flatpak run com.core447.StreamController")
-run_once("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
+run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 
--- Use unique IDs for each xrandr command
+
+-- Use unique IDs for each command that runs multiple times
 run_once ("xrandr --output HDMI-0 --scale 1.25x1.25 --rotate left --left-of DP-4", "xrandr-secondary-size")
-run_once ("xrandr --output DP-4 --pos 1350x960", "xrandr-main-pos")
+run_once ("xrandr --output DP-4 --mode 2560x1440 --rate 165 --pos 1350x960", "xrandr-primary")
 run_once ("pactl load-module module-loopback latency_msec=1", "pactctl-loopback")
 run_once ("pactl load-module module-null-sink media.class=Audio/Sink sink_name=Virtual-Mic channel_map=front-left,front-right", "pactctl-null-sink-sink")
 run_once ("pactl load-module module-null-sink media.class=Audio/Source/Virtual sink_name=Virtual-Mic channel_map=front-left,front-right", "pactctl-null-sink-source-virtual")
