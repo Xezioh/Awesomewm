@@ -17,6 +17,10 @@ client.connect_signal("manage", function(c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+    if c.class == "Plex" then  -- Use the correct class name from WM_CLASS
+        c.icon = '/home/xezioh/.icons/hicolor/48x48/apps/org.xfce.notification.png'  -- Replace with the correct path to the Plex icon
+    end
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
@@ -27,3 +31,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+

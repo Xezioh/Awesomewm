@@ -22,16 +22,12 @@ end
 
 -- Create the directory if it doesn't exist
 awful.spawn.with_shell("mkdir -p " .. autostart_dir)
-
-
 ----
-run_once("nitrogen --restore")
-
-
 -- Auto-start applications using run_once to prevent duplicates
 -- run_once("picom --config ~/.config/picom.conf")
 run_once("pavucontrol")
 run_once("streamcontroller")
+run_once("openrgb")
 run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("xfce4-power-manager")
 run_once("cd /home/xezioh/Documents/turing-smart-screen-python && python3 main.py")
