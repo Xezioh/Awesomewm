@@ -46,3 +46,4 @@ run_once(
     "pactctl-null-sink-source-virtual")
 run_once("pw-link Virtual-Mic:monitor_FL Virtual-Mic:input_FL", "pw-link-FL")
 run_once("pw-link Virtual-Mic:monitor_FR Virtual-Mic:input_FR", "pw-link-FR")
+run_once("cd /home/xezioh/Documents/turing-smart-screen-python && python3 main.py", "smallscreen")
